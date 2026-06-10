@@ -57,6 +57,6 @@ Analisis disusun dalam 5 langkah investigatif untuk menemukan akar masalah:
 <img width="1310" height="1389" alt="img21" src="https://github.com/user-attachments/assets/425811c0-9027-40c0-92f6-23c783019b35" />
 <img width="1310" height="742" alt="img22" src="https://github.com/user-attachments/assets/309617a7-6d3c-4f0a-9438-dbb5f737e0f3" />
 
-**Author:** [Riyannizaar Dwi Amarullah]  
+**Author:** Riyannizaar Dwi Amarullah - 5025241121
 **Persona:** Operational Analyst  
 **Final Project Seleksi Admin Lab MCI ITS 2026**
