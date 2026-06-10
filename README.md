@@ -23,33 +23,23 @@ Arsitektur data dirancang untuk menangani beban kerja analitik (*OLAP*) yang cep
 3. **Analytics Layer:** Hasil transformasi disimpan dalam database `analytics` di ClickHouse.
 4. **Presentation Layer:** Dashboard Metabase mengonsumsi data dari layer analitik untuk menyajikan wawasan yang dapat ditindaklanjuti.
 
-## 🔎 Analytical Narrative (Data Storytelling)
+## Step Analisis
 Analisis disusun dalam 5 langkah investigatif untuk menemukan akar masalah:
 
-1. **Step 1: The Hook (Severity Distribution)** - Menemukan bahwa mayoritas keterlambatan justru masuk kategori ekstrim (> 1 minggu).
-2. **Step 2: The Location (Spatial Mapping)** - Melokalisasi masalah pada rute logistik tersibuk (contoh: SP -> RJ).
-3. **Step 3: The Culprit (Process Breakdown)** - Membedah waktu di Penjual vs Kurir. Terungkap ketimpangan besar: **6.6 hari (Seller) vs 37.8 hari (Carrier)**.
-4. **Step 4: Internal Solution** - Mengidentifikasi daftar *Top Sellers* yang menahan barang terlalu lama (> 15 hari).
-5. **Step 5: External Solution** - Mengidentifikasi rute logistik dengan kinerja kurir terburuk (SLA Breach tertinggi) untuk evaluasi vendor.
+1. **Step 1:** Menemukan bahwa mayoritas keterlambatan justru masuk kategori ekstrim (> 1 minggu).
+2. **Step 2:** Melokalisasi masalah pada rute logistik tersibuk (contoh: SP -> RJ).
+3. **Step 3:** Membedah waktu di Penjual vs Kurir. Terungkap ketimpangan besar: **6.6 hari (Seller) vs 37.8 hari (Carrier)**.
+4. **Step 4:** Mengidentifikasi daftar *Top Sellers* yang menahan barang terlalu lama (> 15 hari).
+5. **Step 5:** Mengidentifikasi rute logistik dengan kinerja kurir terburuk (SLA Breach tertinggi) untuk evaluasi vendor.
 
-## 🚀 How to Run
+## How to Run
 
-### 1. Prerequisites
-- Docker & Docker Compose terinstal.
-- RAM minimal 4GB (direkomendasikan 8GB untuk Spark & ClickHouse).
-
-### 2. Setup Environment
-Clone repository ini dan jalankan container:
-```bash
-docker-compose up -d
-```
-
-### 3. Run Data Pipeline
+### 1. Run Data Pipeline
 - Buka Airflow UI di `http://localhost:8080` (User/Pass: `admin`/`admin`).
 - Aktifkan dan trigger DAG `olist_operational_data_load`.
 - Pipeline akan menjalankan proses Ingesti ke ClickHouse dan Transformasi via Spark.
 
-### 4. Access Dashboard
+### 2. Access Dashboard
 - Buka Metabase di `http://localhost:3000`.
 - Hubungkan ke database `analytics` di ClickHouse.
 - Gunakan query yang tersedia di file `final_operational_dashboard_queries.sql` untuk membangun visualisasi.
@@ -62,6 +52,11 @@ docker-compose up -d
 - `laporan_ieee.tex`: Source code laporan jurnal dalam format LaTeX.
 
 ---
-**Author:** [Nama Kamu]  
+
+## Visualisasi Metabase
+<img width="1310" height="1389" alt="img21" src="https://github.com/user-attachments/assets/425811c0-9027-40c0-92f6-23c783019b35" />
+<img width="1310" height="742" alt="img22" src="https://github.com/user-attachments/assets/309617a7-6d3c-4f0a-9438-dbb5f737e0f3" />
+
+**Author:** [Riyannizaar Dwi Amarullah]  
 **Persona:** Operational Analyst  
 **Final Project Seleksi Admin Lab MCI ITS 2026**
